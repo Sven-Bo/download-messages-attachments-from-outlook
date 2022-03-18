@@ -3,8 +3,7 @@
 In this video, we learn how to use Python to save all messages & attachments from Outlook. This will come in handy when you want to archive old email conversations and attachments. This is a very simple process and can be implemented in just a few minutes!
 
 ## Tutorial
-...will follow soon :)
-[![YouTube Video](https://img.youtube.com/vi/xxx/0.jpg)](https://youtu.be/xxx)
+[![YouTube Video](https://img.youtube.com/vi/oyEMi8sDVOM/0.jpg)](https://youtu.be/oyEMi8sDVOM)
 
 ## Requirements
 ```
