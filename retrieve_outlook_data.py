@@ -1,5 +1,9 @@
-from pathlib import Path  #core python module
+from pathlib import Path
+import datetime
+import re
+
 import win32com.client  #pip install pywin32
+
 
 # Create output folder
 output_dir = Path.cwd() / "Output"
@@ -22,13 +26,15 @@ for message in messages:
     body = message.body
     attachments = message.Attachments
 
-    # Create separate folder for each message
-    target_folder = output_dir / str(subject)
+    # Create separate folder for each message, exclude special characters and timestampe
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    target_folder = output_dir / re.sub('[^0-9a-zA-Z]+', '', subject) + "_" + current_time
     target_folder.mkdir(parents=True, exist_ok=True)
 
     # Write body to text file
     Path(target_folder / "EMAIL_BODY.txt").write_text(str(body))
 
-    # Save attachments
+    # Save attachments and exclude special
     for attachment in attachments:
-        attachment.SaveAsFile(target_folder / str(attachment))
+        filename = re.sub('[^0-9a-zA-Z\.]+', '', attachment.FileName)
+        attachment.SaveAsFile(target_folder / filename)
