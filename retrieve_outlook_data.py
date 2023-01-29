@@ -28,7 +28,7 @@ for message in messages:
 
     # Create separate folder for each message, exclude special characters and timestampe
     current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    target_folder = output_dir / re.sub('[^0-9a-zA-Z]+', '', subject) + "_" + current_time
+    target_folder = output_dir / re.sub('[^0-9a-zA-Z]+', '', subject) / current_time
     target_folder.mkdir(parents=True, exist_ok=True)
 
     # Write body to text file
