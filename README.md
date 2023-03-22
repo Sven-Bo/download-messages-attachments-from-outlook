@@ -6,6 +6,7 @@ In this video, we learn how to use Python to save all messages & attachments fro
 [![YouTube Video](https://img.youtube.com/vi/oyEMi8sDVOM/0.jpg)](https://youtu.be/oyEMi8sDVOM)
 
 ## Requirements
+🚨 Windows only
 ```
 pywin32==227
 ```
